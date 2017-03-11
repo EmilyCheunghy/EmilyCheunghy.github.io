@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Homework 4</title>
+
+
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="clean-blog.min.css" rel="stylesheet">
+
+
+    <link href="font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+
+
+</head>
+
+<body>
+
+   
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+        
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand">Emily Cheung</a></div>
+
+            
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+            </div>
+      
+        </div>
+       
+    </nav>
+
+   
+    <header class="intro-header" style="background-image: url('skull_mickey_wallpaper_background_15798.jpg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                      <h1> Cancer Death Rates in Different Countries</h1>
+                      <h2 class="subheading">Relationship between type of cancer and nationality</h2>
+                      <span class="meta">Posted by Emily Cheung on March 10, 2017</span></div>
+                    &nbsp;</div>
+            </div>
+        </div>
+    </header>
+
+  
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <p>Cancer is a group of diseases involving abnormal cell growth with the potential to invade or spread to other parts of the body.  There were an estimated 13 thousand cancer mortality in Hong Kong in 2014, according to the Hong Kong Cancer Registry under Hospital Authority.The nationality is observed to be a factor of getting certain type of cancer. It is believed that external factors, such as eating habits, living environment, and the working style would affect the cancer death rates. Let's take a look on the differences of people by nationality. </p>
+                  <p><b>Picture showing the Cancer Rate around the world </b></p>
+                  <img class="img-responsive" src="cancer rate.png">
+                   
+                    
+                  <p> Please select the countries and type of cancer to see the death rate.</p>
+                  <div>
+                <label>Country</label>
+                <select id="index1">
+            <option value="one">Brazil</option>
+            <option value="two">Australia</option>
+            <option value="three">China</option>
+            <option value="four">Japan</option>
+            <option value="five">U.S.A</option>
+            <option value="six">Canada</option>
+            <option value="seven">Norway</option>
+            <option value="eight">India</option>
+            <option value="nine">Iran</option>
+            <option value="ten">Russia</option>
+
+            
+        </select>
+            </div>
+
+            <div>
+                <label>Type of Cancer</label>
+                <select id="index2">
+            <option value="1">Breast Cancer</option>
+            <option value="2">Skin Cancer</option>
+            <option value="3">Lung Cancer</option>
+            <option value="4">Colon-Rectum Cancer</option>
+
+        </select>
+            </div>
+
+            <div><button class="btn btn-primary" id="submit">Submit</button></div>
+
+            <div class="form-group">
+                <label for="headcount">Death Rate</label>
+                <input class="form-control" type="text" id="output" readonly>
+            </div>
+             <span class="caption text-muted">Source link: <a href="https://goo.gl/acSqdL">https://goo.gl/acSqdL</a></span>
+
+            <div>
+                <span class="glyphicon glyphicon-remove" aria-hidden="true" style="display: none" id="remove"></span>
+                <span class="glyphicon glyphicon-ok" aria-hidden="true" style="display: none" id="ok"></span>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <br>
+            
+        </div>
+
+       
+        </div>
+
+    </div>
+
+    <div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </div>
+
+    <script type="text/javascript">
+        var countArr = [{
+                start: "one",
+                end: "1",
+                count: "16.91"
+            }, {
+                start: "one",
+                end: "2",
+                count: "2.25"
+            }, {
+                start: "one",
+                end: "3",
+                count: "5.3"
+            }, {
+                start: "one",
+                end: "4",
+                count: "9.95"
+            },
+
+            {
+                start: "two",
+                end: "1",
+                count: "18.33"
+            }, {
+                start: "two",
+                end: "2",
+                count: "6.52"
+            }, {
+                start: "two",
+                end: "3",
+                count: "4.35"
+            }, {
+                start: "two",
+                end: "4",
+                count: "12.45"
+            }, 
+
+            {
+                start: "three",
+                end: "1",
+                count: "6.1"
+            }, {
+                start: "three",
+                end: "2",
+                count: "0.78"
+            }, {
+                start: "three",
+                end: "3",
+                count: "24.47"
+            }, {
+                start: "three",
+                end: "4",
+                count: "9.11"
+            }, 
+
+            {
+                start: "four",
+                end: "1",
+                count: "10.86"
+            }, {
+                start: "four",
+                end: "2",
+                count: "0.71"
+            }, {
+                start: "four",
+                end: "3",
+                count: "17.87"
+            }, {
+                start: "four",
+                end: "4",
+                count: "14.88"
+            }, 
+
+            {
+                start: "five",
+                end: "1",
+                count: "19.36"
+            }, {
+                start: "five",
+                end: "2",
+                count: "3.21"
+            }, {
+                start: "five",
+                end: "3",
+                count: "5.29"
+            }, {
+                start: "five",
+                end: "4",
+                count: "12.95"
+            }, 
+
+            {
+                start: "six",
+                end: "1",
+                count: "18.53"
+            }, {
+                start: "six",
+                end: "2",
+                count: "3.29"
+            }, {
+                start: "six",
+                end: "3",
+                count: "4.03"
+            }, {
+                start: "six",
+                end: "4",
+                count: "15.42"
+            }, 
+
+            {
+                start: "seven",
+                end: "1",
+                count: "16.45"
+            }, {
+                start: "seven",
+                end: "2",
+                count: "4.8"
+            }, {
+                start: "seven",
+                end: "3",
+                count: "3.02"
+            }, {
+                start: "seven",
+                end: "4",
+                count: "20.24"
+            }, 
+
+            {
+                start: "eight",
+                end: "1",
+                count: "10.14"
+            }, {
+                start: "eight",
+                end: "2",
+                count: "0.18"
+            }, {
+                start: "eight",
+                end: "3",
+                count: "2.85"
+            }, {
+                start: "eight",
+                end: "4",
+                count: "5.13"
+            }, 
+
+            {
+                start: "nine",
+                end: "1",
+                count: "13.65"
+            }, {
+                start: "nine",
+                end: "2",
+                count: "0.71"
+            }, {
+                start: "nine",
+                end: "3",
+                count: "2.67"
+            }, {
+                start: "nine",
+                end: "4",
+                count: "7.26"
+            }, 
+
+            {
+                start: "ten",
+                end: "1",
+                count: "21.84"
+            }, {
+                start: "ten",
+                end: "2",
+                count: "2.37"
+            }, {
+                start: "ten",
+                end: "3",
+                count: "4.2"
+            }, {
+                start: "ten",
+                end: "4",
+                count: "20.49"
+            }
+        ];
+
+        $(function() {
+            $('#submit').click(function() {
+                var index1 = $('#index1').val();
+                var index2 = $('#index2').val();
+                for (var i = 0; i < countArr.length; i++) {
+                    if (index1 == countArr[i].start && index2 == countArr[i].end) { 
+                        var result = countArr[i].count;
+                        $('#output').val(result + " per 100,000 ppl.");
+						
+                    }
+                }
+            });
+        })
+
+        
+    </script>
+        
+    </script>
+  
+    <script src="jquery.min.js"></script>
+
+    
+    <script src="bootstrap.min.js"></script>
+
+   
+    <script src="jqBootstrapValidation.js"></script>
+    <script src="contact_me.js"></script>
+
+    
+    <script src="clean-blog.min.js"></script>
+
+</body>
+
+</html>
