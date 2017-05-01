@@ -49,7 +49,7 @@
     </nav>
 
    
-    <header class="intro-header" style="background-image: url('Healthcare-sized.jpg')">
+    <header class="intro-header" style="background-image: url('HW6-01.png')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -64,7 +64,9 @@
 
   <div class="container">
             <div class="row">
-    <article><p>The whole blog consists of 10 HTML pages. They are Index page, About me page, Homework 1, Homework 3, Homework 4, Homework 5, Archtecture, Art, Market, and Paper Offering. The Index Page is the main page of the whole blog which link the other page together. The about me page breifly introcduce the hobbies and personalities of the author. The Homework pages are presenting the product in the class JOUR2106. The remaining pages incluing Architecture, Art, Market and Paper Offering are added in the middle of incestigation period to enrich the whole blog with the author's own work from other courses.</p>
+            <h2 class="section-heading"> Introduction</h2>
+    <article><p>After taking the class JOUR 2106, I am able to make my personal blog without using template, but pictures, videos and other elements I created myself. The blog is made of 10 HTML pages. I named them “Index page”, “About me page”, “Homework 1”, “Homework 3”, “Homework 4”, “Homework 5”, “Architecture Art”, “Market”, and “Paper Offering” in Google Analytics Tool.</p>
+    <p>“Index Page” is the main page of the blog and it links the all the other pages together. “About me page” is a brief introduction of myself and the blog. The four Homework pages are the products I made during class. It marks different stages of me throughout the class, from being able to make simple html layout to interactive charts. The remaining pages, including “Architecture Art”, “Market” and “Paper Offering” are added to enrich the blog with my own journalistic work.</p>
     <p>Since the number of pages are too large, we firstly investigate which pages contribute most to the total clickrate and find out the most representative one and analyze it. The contribution of different pages to the total clickrate are shown in the below pie chart. </p>
       <center> <div id="main" style="width: 1100px;height:400px;"></div> </center>
       <p>The above graph show that the "Index page" contribute most to the totalclick rate, which is 51.36% of it. It followed by "About me Page" which contribute 20.46% of the total clickrate. The remaining pages contribute 1-5% each. Therefore, it shows that the Index page and About me page has the highest clockrate among all the pages in the blog. It could be explained that all of the promotion are done on the inex page, therefore, almost all visitor will reach the index page before getting to other pages. This explains the extreme difference between "Index page" and other pages. For" About me Page", it is placed in the top of the index page about the cover photo. It may attract the visitor to click it since it is the first button appear after the entered the website.  </p>
@@ -90,7 +92,12 @@
 
 <p> Within the investigation periond, a new feature is introduced into the website. A swiper promoting the featured post is added. The swiper promote the three of the newly added post: "Architect", "Art", and "Paper Offering". While the "Market" is not included in the swiper. Since the four newly-added, so data collection are only done between 24th to 30th April. 
 <div id="main3" style="width: 1100px;height:500px;"></div>
-<p> The graph show the clickrate of four pages. Although "Architecture" have highest clickrate almost among the whole period, it may also due to the upper location in the index page. When compare the remaining three pages, no significant difference is found. Therefore, the effect of the swiper to boost the clickrate of particular page seems very little. 
+<p> The graph show the clickrate of four pages. Although "Architecture" have highest clickrate almost among the whole period, it may also due to the upper location in the index page. When compare the remaining three pages, no significant difference is found. Therefore, the effect of the swiper to boost the clickrate of particular page seems very little. </p>
+<p> After analyzed the effect of promotion, here is some interesting fact of the result.</p>
+<p>Although Hong Kong are the main location where the visitor from, there are also some visitor from other countries. It slightly shows the power of facebook promotion which can link the whole world together.</p>
+<div id="main5" style="width: 1100px;height:500px;"></div>
+<p> Another interesting result is that the Besktop user to Mobile User ratio is almost 1:1. Which shows that the Mobile market is becoming more annd more popular and have overcome the desktop one. It emphaize the importance of using cross-device user-interface(e.g.: bootstrap).
+<div id="main6" style="width: 1100px;height:500px;"></div>
 
     <script type="text/javascript" src="echarts.js"></script>
 
@@ -100,7 +107,9 @@
 	
     var myChart2 = echarts.init(document.getElementById('main2'));
     var myChart3 = echarts.init(document.getElementById('main3'));
-	var myChart4 = echarts.init(document.getElementById('main4'))
+	var myChart4 = echarts.init(document.getElementById('main4'));
+	var myChart5 = echarts.init(document.getElementById('main5'));
+	var myChart6 = echarts.init(document.getElementById('main6'))
 
     var option = {
     title : {
@@ -172,7 +181,7 @@
          saveAsImage : {show: true}
         }
       },"title": {
-                "text": "Click Rate"},
+                "text": "Clickrate Among April"},
       legend: {
         data:['Total','Index Page','About me']
       },
@@ -265,7 +274,8 @@
     };var option4 = {
     tooltip : {
         trigger: 'axis'
-    },
+    },"title": {
+                "text": "Click Rate with promotion"},
     legend: {
         data:['Average Click rate without promotion','Facebook','Instagram','Intagram Story & Whatsapp']
     },
@@ -281,7 +291,7 @@
     },
     calculable : true,
     xAxis : [
-        {
+        {name : 'Day in April',
             type : 'category',
             boundaryGap : false,
             data : ['23','24','25','26','27','28','29','30']
@@ -322,12 +332,113 @@
             data:[0, 0, 0, 0, 0, 0, 6, 85]
         }
     ]
-}
+};var option5 = {
+    title : {
+        text: 'Location of Visitor',
+        
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {
+                show: true, 
+                type: ['pie', 'funnel'],
+                option: {
+                    funnel: {
+                        x: '25%',
+                        width: '50%',
+                        funnelAlign: 'left',
+                        max: 1548
+                    }
+                }
+            },
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    series : [
+        {
+            name:'Click rate',
+            type:'pie',
+            radius : '55%',
+            center: ['50%', '60%'],
+            data:[
+                {value:205, name:'Hong Kong'},
+                {value:11, name:'United States'},
+                {value:8, name:'Brazil'},
+                {value:5, name:'United Kingdom'},
+                {value:4, name:'Singapore'},
+                {value:2, name:'Australia'},
+                {value:2, name:'China'},
+                {value:2, name:'Estonia'},
+                {value:1, name:'Bahrain'},
+                {value:1, name:'Canada'}
+            ]
+        }
+   
+      ]
+    };var option6 = {
+    title : {
+        text: 'Ratio of Desktop User to Mobile User',
+        
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    }
+  ,
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {
+                show: true, 
+                type: ['pie', 'funnel'],
+                option: {
+                    funnel: {
+                        x: '25%',
+                        width: '50%',
+                        funnelAlign: 'left',
+                        max: 1548
+                    }
+                }
+            },
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    series : [
+        {
+            name:'Click rate',
+            type:'pie',
+            radius : '55%',
+            center: ['50%', '60%'],
+            data:[
+                {value:113, name:'Desktop User'},
+                {value:133, name:'Mobile User'}
+            ]
+        }
+   
+      ]
+    }
 
     myChart.setOption(option);
     myChart2.setOption(option2);
     myChart3.setOption(option3);
 	myChart4.setOption(option4);
+	myChart5.setOption(option5);
+	myChart6.setOption(option6)
 </script>
 
 </body>
