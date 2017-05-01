@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Homework 6</title>
+
+
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="clean-blog.min.css" rel="stylesheet">
+
+
+    <link href="font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+
+
+</head>
+
+
+
+<body>
+
+   
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+        
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand">Report of JOUR2106</a></div>
+
+            
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+            </div>
+      
+        </div>
+       
+    </nav>
+
+   
+    <header class="intro-header" style="background-image: url('Healthcare-sized.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                      <h1>Investigation of the Google Analytics Result</h1>
+                      <h2 class="subheading">Promotion Effects among different method</h2>
+                      <span class="meta">Posted by Emily Cheung on May 1, 2017</span></div>
+                    &nbsp;</div>
+            </div>
+        </div>
+    </header>
+
+  <div class="container">
+            <div class="row">
+    <article><p>The whole blog consists of 10 HTML pages. They are Index page, About me page, Homework 1, Homework 3, Homework 4, Homework 5, Archtecture, Art, Market, and Paper Offering. The Index Page is the main page of the whole blog which link the other page together. The about me page breifly introcduce the hobbies and personalities of the author. The Homework pages are presenting the product in the class JOUR2106. The remaining pages incluing Architecture, Art, Market and Paper Offering are added to enrich the whole blog with the author's own work from other courses.</p>
+    <p>Since the number of pages are too large, we firstly investigate which pages contribute most to the total clickrate and find out the most representative one and analyze it. The contribution of different pages to the total clickrate are shown in the below pie chart. </p>
+      <center> <div id="main" style="width: 1100px;height:400px;"></div> </center>
+      <p>The above graph show that the "Index page" contribute most to the totalclick rate, which is 51.36% of it. It followed by "About me Page" which contribute 20.46% of the total clickrate. The remaining pages contribute 1-5% each. Therefore, it shows that the Index page and About me page has the highest clockrate among all the pages in the blog. It could be explained that all of the promotion are done on the inex page, therefore, almost all visitor will reach the index page before getting to other pages. This explains the extreme difference between "Index page" and other pages. For" About me Page", it is placed in the top of the index page about the cover photo. It may attract the visitor to click it since it is the first button appear after the entered the website.  </p>
+      <p>We then analyze the clickrate variation along the whole month. Since the pages other than "Index page" and "About me Page" contribute little to the total clickrate, only "total Clickrate", "Index Page" and "About me" are shown in the below line chart.  </p>
+
+                <div id="main2" style="width: 1100px;height:500px;"></div>
+<p>The above chart briefly shows the clickrate history in April. There are little peak on 8th, 13th and 19th April, which may caused by the testing of website when editing the "Index Page". The chart also show a signifcant surge on 26th and 30th April, which could be the effect of promotion.</p>
+<p>  </p>
+<p>  </p>
+                   <p>TThe </p>
+<div id="main4" style="width: 1100px;height:500px;"></div>
+<div id="main3" style="width: 1100px;height:500px;"></div>
+
+    <script type="text/javascript" src="echarts.js"></script>
+
+    <script type="text/javascript">
+
+    var myChart = echarts.init(document.getElementById('main'));
+	
+    var myChart2 = echarts.init(document.getElementById('main2'));
+    var myChart3 = echarts.init(document.getElementById('main3'));
+	var myChart4 = echarts.init(document.getElementById('main4'))
+
+    var option = {
+    title : {
+        text: 'Contribution of different page to the total Click',
+        
+        x:'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+    legend: {
+        orient : 'vertical',
+        x : 'left',
+        data:['Index Page','About me','HW1','HW3','HW4','HW5','Architecture','Art','Market','Paper Offering']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {
+                show: true, 
+                type: ['pie', 'funnel'],
+                option: {
+                    funnel: {
+                        x: '25%',
+                        width: '50%',
+                        funnelAlign: 'left',
+                        max: 1548
+                    }
+                }
+            },
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    series : [
+        {
+            name:'Click rate',
+            type:'pie',
+            radius : '55%',
+            center: ['50%', '60%'],
+            data:[
+                {value:246, name:'Index Page'},
+                {value:98, name:'About me'},
+                {value:21, name:'HW1'},
+                {value:25, name:'HW3'},
+                {value:22, name:'HW4'},
+                {value:22, name:'HW5'},
+                {value:20, name:'Architecture'},
+                {value:9, name:'Art'},
+                {value:5, name:'Market'},
+                {value:11, name:'Paper Offering'}
+            ]
+        }
+   
+      ]
+    };
+    var option2 = {
+      tooltip: {
+        show: true
+      },
+      toolbox: {
+        show : true,
+        feature : {
+          dataView : {show: true, readOnly: false},
+         saveAsImage : {show: true}
+        }
+      },"title": {
+                "text": "Click Rate"},
+      legend: {
+        data:['Total','Index Page','About me']
+      },
+      xAxis : [
+        {name : 'Day in April',
+          type : 'category',
+          data : ["3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30"]
+        }
+      ],
+      yAxis : [
+        {
+          type : 'value'
+        },
+        {
+          type : 'value'
+        }
+      ],
+      series : [
+          {
+              "name":"Total",
+              "type":"line",
+              "data":[6,1,5,8,3,18,2,4,1,2,8,0,3,0,0,0,10,2,0,10,3,34,52,154,43,15,8,87]
+          },
+          {
+              "name":"Index Page",
+              "type":"line",
+              "data":[6,1,1,1,1,5,1,4,1,1,1,0,1,0,0,0,5,1,0,8,3,14,25,88,20,8,6,44]
+        }
+	,
+		  {
+              "name":"About me",
+              "type":"line",
+              "data":[ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,15,45,9,1,2,22 ]
+          }
+      ]
+    };
+     var option3 = {
+      tooltip: {
+        show: true
+      },
+      toolbox: {
+        show : true,
+        feature : {
+          dataView : {show: true, readOnly: false},
+         saveAsImage : {show: true}
+        }
+      },"title": {
+                "text": "Click Rate of four newly added page"},
+      legend: {
+        data:['Architecture','Art','Market','Paper Offering']
+      },
+      xAxis : [
+        {name : 'Day in April',
+          type : 'category',
+          data : ["24","25","26","27","28","29","30"]
+        }
+      ],
+      yAxis : [
+        {
+          type : 'value'
+        },
+        {
+          type : 'value'
+        }
+      ],
+      series : [
+          {
+              "name":"Architecture",
+              "type":"line",
+              "data":[3,3,7,2,1,0,4]
+          },
+          {
+              "name":"Art",
+              "type":"line",
+              "data":[2,2,0,2,2,0,1]
+        }
+	,
+		  {
+              "name":"Market",
+              "type":"line",
+              "data":[ 0,1,2,0,0,0,2 ]
+          }
+	,
+		  {
+              "name":"Paper Offering",
+              "type":"line",
+              "data":[ 2,1,2,2,0,0,4 ]
+          }
+      ]
+    };var option4 = {
+    tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['Average Click rate without promotion','Facebook','Instagram','Intagram Story & Whatsapp']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : ['23','24','25','26','27','28','29','30']
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'Average Click rate without promotion',
+            type:'line',
+            stack: '总量',
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data:[2, 2, 2, 2, 2, 2, 2, 2]
+        },
+        {
+            name:'Facebook',
+            type:'line',
+            stack: '总量',
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data:[0, 0, 50, 152, 0, 0, 0, 0]
+        },
+        {
+            name:'Instagram',
+            type:'line',
+            stack: '总量',
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data:[0, 0, 0, 0, 41, 13, 0, 0]
+        },
+        {
+            name:'Intagram Story & Whatsapp',
+            type:'line',
+            stack: '总量',
+            itemStyle: {normal: {areaStyle: {type: 'default'}}},
+            data:[0, 0, 0, 0, 0, 0, 6, 85]
+        }
+    ]
+}
+
+    myChart.setOption(option);
+    myChart2.setOption(option2);
+    myChart3.setOption(option3);
+	myChart4.setOption(option4);
+</script>
+
+</body>
+
+</html>
